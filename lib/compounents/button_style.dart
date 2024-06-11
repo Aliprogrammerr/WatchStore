@@ -3,6 +3,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:watchstore/resuorce/color.dart';
 import 'package:watchstore/resuorce/dimens.dart';
 
 class AppButtonStyle {
@@ -10,7 +11,7 @@ class AppButtonStyle {
 
 
  static ButtonStyle mianButtonStyle =  ButtonStyle(
-
+  backgroundColor: MaterialStatePropertyAll(LightAppColors.buttonColor),
   shape: MaterialStatePropertyAll(RoundedRectangleBorder(
     borderRadius: BorderRadius.circular(Dimens.medium),
   ))

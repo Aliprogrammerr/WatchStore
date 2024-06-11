@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:watchstore/compounents/app_text_style.dart';
 import 'package:watchstore/compounents/button_style.dart';
 
+
+// ignore: must_be_immutable
 class MainButton extends StatelessWidget {
   MainButton({super.key, required this.text, required this.onpressed});
   final String text;
@@ -15,7 +18,9 @@ class MainButton extends StatelessWidget {
         style: AppButtonStyle.mianButtonStyle ,
         onPressed: onpressed,
         child: Center(
-            child: Text(text,)
+            child: Text(text,
+            style: LightAppTextStyle.mainButtonStyle,
+            )
       ),
       ),
     );

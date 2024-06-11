@@ -1,6 +1,7 @@
 
 
 abstract class AppStrings {
+
   static const String replace = "replace";
   static const String enterYourNumber = "شماره خود را وارد کنید";
   static const String hintPhoneNumber = "مثل :  09121114466";

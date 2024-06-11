@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:watchstore/compounents/app_text_style.dart';
 import 'package:watchstore/compounents/extentions.dart';
 import 'package:watchstore/resuorce/dimens.dart';
 
+// ignore: must_be_immutable
 class AppTextField extends StatelessWidget {
-   
+
   final String label;
   final String hint;
   final String timer;
@@ -35,8 +37,8 @@ class AppTextField extends StatelessWidget {
       Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(timer),
-          Text(label),
+          Text(timer,style:LightAppTextStyle.title,),
+          Text(label,style:LightAppTextStyle.title)
         ],
       ),
       Dimens.medium.height,
@@ -49,6 +51,7 @@ class AppTextField extends StatelessWidget {
           keyboardType:keyboardType,
           decoration: InputDecoration(
             hintText: hint,
+            hintStyle: LightAppTextStyle.hint,
             prefixIcon: icon,
           ),
     
