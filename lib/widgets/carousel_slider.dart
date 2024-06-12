@@ -1,4 +1,3 @@
-import 'package:carousel_slider/carousel_controller.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:watchstore/resuorce/color.dart';
@@ -31,10 +30,9 @@ class _AppSliderState extends State<AppSlider> {
                 fit: BoxFit.cover,
               ),
             ),
-          )
-          )
+          ))
       .toList();
-    int curentIndex = 0 ;
+  int curentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -48,30 +46,32 @@ class _AppSliderState extends State<AppSlider> {
               autoPlay: true,
               onPageChanged: (index, reason) {
                 setState(() {
-            curentIndex = index;
-                  
+                  curentIndex = index;
                 });
-                },
+              },
             ),
             items: items,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: 
-            images.asMap().entries.map((e) =>
-            GestureDetector(
-              onTap:()=> _controller.animateToPage(e.key) ,
-              child: Container(
-                margin: EdgeInsets.all(8),
-                width: 10,
-                height: 10,
-                decoration: BoxDecoration(
-                  color: curentIndex == e.key ? Colors.black : LightAppColors.primaryColor ,
-                  shape: BoxShape.circle
-                ),
-              ),
-            )).toList()
-          ,)
+            children: images
+                .asMap()
+                .entries
+                .map((e) => GestureDetector(
+                      onTap: () => _controller.animateToPage(e.key),
+                      child: Container(
+                        margin: const EdgeInsets.all(8),
+                        width: 10,
+                        height: 10,
+                        decoration: BoxDecoration(
+                            color: curentIndex == e.key
+                                ? Colors.black
+                                : LightAppColors.primaryColor,
+                            shape: BoxShape.circle),
+                      ),
+                    ))
+                .toList(),
+          )
         ],
       ),
     );

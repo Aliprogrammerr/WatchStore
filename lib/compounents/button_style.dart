@@ -11,7 +11,7 @@ class AppButtonStyle {
 
 
  static ButtonStyle mianButtonStyle =  ButtonStyle(
-  backgroundColor: MaterialStatePropertyAll(LightAppColors.buttonColor),
+  backgroundColor: const MaterialStatePropertyAll(LightAppColors.buttonColor),
   shape: MaterialStatePropertyAll(RoundedRectangleBorder(
     borderRadius: BorderRadius.circular(Dimens.medium),
   ))

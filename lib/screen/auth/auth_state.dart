@@ -14,6 +14,7 @@ class VerifiedNotRegistered extends AuthState{}
 class ErrorState  extends AuthState {}
 
 class SendState  extends AuthState {
+  // ignore: prefer_typing_uninitialized_variables
   final mobile;
   SendState({required this.mobile});
 }

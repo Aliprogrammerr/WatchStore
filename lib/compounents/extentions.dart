@@ -9,7 +9,7 @@ extension SizedBoxExtention on num {
   SizedBox get width => SizedBox(width:toDouble());
 }
 
-extension intExtention on int {
+extension IntExtention on int {
    String get seperateWithComma {
     final numbertformat = NumberFormat.decimalPattern();
     return numbertformat.format(this); 

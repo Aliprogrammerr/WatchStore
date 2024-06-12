@@ -1,11 +1,11 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:watchstore/compounents/app_text_style.dart';
 import 'package:watchstore/resuorce/dimens.dart';
 
-
-
-
+// ignore: must_be_immutable
 class CatItem extends StatelessWidget {
   CatItem(
       {super.key,

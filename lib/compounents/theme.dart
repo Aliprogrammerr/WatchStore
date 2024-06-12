@@ -1,16 +1,11 @@
-
-
-
-
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:watchstore/resuorce/color.dart';
 import 'package:watchstore/resuorce/dimens.dart';
 
 ThemeData lightTheme(){
   return ThemeData(
     brightness: Brightness.light,
-    iconTheme: IconThemeData(
+    iconTheme: const IconThemeData(
       color: Colors.black,),
       primaryColor: LightAppColors.primaryColor, 
       scaffoldBackgroundColor: LightAppColors.scaffoldBackground,
@@ -25,11 +20,11 @@ ThemeData lightTheme(){
             return LightAppColors.unfocusedTextfeild;
           } 
          }),
-         contentPadding: EdgeInsets.all(Dimens.medium),
+         contentPadding: const EdgeInsets.all(Dimens.medium),
 
          enabledBorder:OutlineInputBorder(
            borderRadius: BorderRadius.circular(Dimens.medium),
-           borderSide: BorderSide(color:LightAppColors.borderColor)
+           borderSide: const BorderSide(color:LightAppColors.borderColor)
          )
       ),
        

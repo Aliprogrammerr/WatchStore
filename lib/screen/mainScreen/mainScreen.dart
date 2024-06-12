@@ -1,9 +1,7 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:watchstore/compounents/app_text_style.dart';
-import 'package:watchstore/compounents/extentions.dart';
 import 'package:watchstore/resuorce/color.dart';
-import 'package:watchstore/resuorce/dimens.dart';
 import 'package:watchstore/screen/mainScreen/carts_screen.dart';
 import 'package:watchstore/screen/mainScreen/homeScreen.dart';
 import 'package:watchstore/screen/mainScreen/profiler.dart';
@@ -21,7 +19,7 @@ class BtnNavigationscreen {
 
 
 class MainScreen extends StatefulWidget {  
-   MainScreen({super.key});
+   const MainScreen({super.key});
 
   @override
   State<MainScreen> createState() => _MainScreenState();
@@ -45,7 +43,7 @@ class _MainScreenState extends State<MainScreen> {
               bottom: bottomNavheight,
               child: IndexedStack(
                 index : selectedIndex ,
-                children: [
+                children: const [
                   BasketScreen(),
                  Carts_screen(),
                   ProfileScreen(),

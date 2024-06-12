@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -7,7 +9,7 @@ import 'package:watchstore/resuorce/color.dart';
 import 'package:watchstore/resuorce/dimens.dart';
 
 class ProductItem extends StatelessWidget {
-   ProductItem({
+   const ProductItem({
     super.key,
     required this.price,
     required this.productName,
@@ -26,7 +28,7 @@ class ProductItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
      decoration: BoxDecoration(
-      gradient: LinearGradient(colors: LightAppColors.productBgGradiant , 
+      gradient: const LinearGradient(colors: LightAppColors.productBgGradiant , 
       begin: Alignment.topCenter , 
       end:  Alignment.bottomCenter
       ),
@@ -34,18 +36,18 @@ class ProductItem extends StatelessWidget {
        borderRadius: BorderRadius.circular(Dimens.medium)),
      height: 300,
      width: 200,
-     margin: EdgeInsets.all(9),
+     margin: const EdgeInsets.all(9),
      child: Padding(
-       padding: EdgeInsets.all(8),
+       padding: const EdgeInsets.all(8),
        child: Column(
          crossAxisAlignment: CrossAxisAlignment.center,
          children: [
            Image.asset("assets/png/unnamed.png"),
-           SizedBox(height: Dimens.large,),
+           const SizedBox(height: Dimens.large,),
            Align(
             alignment: Alignment.centerRight,
             child: Text(productName,style: LightAppTextStyle.title,)),
-           SizedBox(height:Dimens.medium,),
+           const SizedBox(height:Dimens.medium,),
            Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
              children: [
@@ -56,7 +58,7 @@ class ProductItem extends StatelessWidget {
                    
                    Visibility(
                     visible: dicount > 0 ? true : false  ,
-                    child: Text("${price.seperateWithComma}",style:LightAppTextStyle.oldPrice))
+                    child: Text(price.seperateWithComma,style:LightAppTextStyle.oldPrice))
                  ],
                ),
                Visibility(
@@ -80,7 +82,7 @@ class ProductItem extends StatelessWidget {
             color: LightAppColors.primaryColor,
            ),
            Dimens.large.height,
-           Text("21:23:11", style: LightAppTextStyle.timer,)
+           const Text("21:23:11", style: LightAppTextStyle.timer,)
          ],
        ),
      ),

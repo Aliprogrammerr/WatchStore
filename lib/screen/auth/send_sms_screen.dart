@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:watchstore/compounents/extentions.dart';
-import 'package:watchstore/resuorce/appString.dart';
+import 'package:watchstore/resuorce/app_String.dart';
 import 'package:watchstore/route/names.dart';
 import 'package:watchstore/screen/auth/auth_cubit.dart';
 import 'package:watchstore/widgets/app_textfeild.dart';
@@ -24,19 +24,19 @@ class SendSmsScreen extends StatelessWidget {
             const Image(image: AssetImage('assets/png/main_logo.png')),
             60.height,
             AppTextField(controller:controller, hint:AppStrings.hintPhoneNumber, label: AppStrings.enterYourNumber),
-            BlocConsumer(
+            BlocConsumer<AuthCubit,AuthState>(
               listener: (context, state) {
                 if (state is SendState){
                   Navigator.pushNamed(context,ScreenNames.verifyCodeScreen,arguments:state.mobile );
                 }
                 else if(state is ErrorState){
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("something is wrong")));
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("something is wrong")));
                 }
   
               },
               builder:(context ,state){
               if(state is LoadingState){
-                 return Center(
+                 return const Center(
                   child:CircularProgressIndicator(),
                  );
                 }

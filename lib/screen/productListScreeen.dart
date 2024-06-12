@@ -1,9 +1,6 @@
-// CartBudget(count: 2,color:isActive ? LightAppColors.bottomNavActive : LightAppColors.bottomNavInActive  ,),
-
-import 'package:flutter/cupertino.dart';
+// ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:watchstore/compounents/app_text_style.dart';
 import 'package:watchstore/compounents/extentions.dart';
@@ -45,10 +42,9 @@ class ProductListScreen extends StatelessWidget {
                 icon: SvgPicture.asset("assets/svg/close.svg"))
           ],
         )),
-        body: SingleChildScrollView(
+        body: const SingleChildScrollView(
           child: Column(
             children: [
-
               SizedBox(height: 60, child: TagList()),
               ProductGridView()
             ],
@@ -97,7 +93,7 @@ class TagList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       child: ListView.builder(
         itemCount: 6,
         scrollDirection: Axis.horizontal,
@@ -128,21 +124,19 @@ class ProductGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return 
-    SizedBox(
-              width: 800,
-              height:2500,
-              child:
-              GridView.builder(
-                gridDelegate:SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 5,
-                  mainAxisSpacing: 10,
-                  childAspectRatio: 0.6
-                ),
-               itemBuilder: ((context, index) => ProductItem(price: 20000,dicount: 29 ,oldPrice: 2000,productName: "hello") )
-               ,
-        itemCount: 6,             ),
-            );
+    return SizedBox(
+      width: 800,
+      height: 2500,
+      child: GridView.builder(
+        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            crossAxisSpacing: 5,
+            mainAxisSpacing: 10,
+            childAspectRatio: 0.6),
+        itemBuilder: ((context, index) => const ProductItem(
+            price: 20000, dicount: 29, oldPrice: 2000, productName: "hello")),
+        itemCount: 6,
+      ),
+    );
   }
 }
