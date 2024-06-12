@@ -7,7 +7,9 @@ class AuthInitial extends AuthState {}
 
 class LoadingState extends AuthState {}
 
-class VerifyState extends AuthState{}
+class VerifiedIsRegistered extends AuthState{}
+
+class VerifiedNotRegistered extends AuthState{}
 
 class ErrorState  extends AuthState {}
 

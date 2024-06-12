@@ -36,7 +36,10 @@ class AuthCubit extends Cubit<AuthState> {
       dio.post(EndPoint.checkSms ,data: {"mobile":mobile,"code":code}).then((value){
         debugPrint(value.toString());
         if(value.statusCode ==201){
-          emit(VerifyState());
+          if(value.data["data"]["is_registered"]){
+            emit(VerifiedIsRegistered());
+          }else{
+            emit(VerifiedNotRegistered());          }
         }
         else{
           emit(ErrorState());
