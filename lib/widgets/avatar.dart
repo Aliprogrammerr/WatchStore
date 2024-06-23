@@ -6,22 +6,27 @@ import 'package:watchstore/resuorce/app_String.dart';
 import 'package:watchstore/resuorce/dimens.dart';
 
 class Avatar extends StatelessWidget {
-  const Avatar({super.key});
+  const Avatar({super.key,required this.file,required this.ontap});
+  final Function() ontap; 
+  final  file ;
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        ClipRRect(
-          borderRadius: BorderRadius.circular(100),
-          child: const Image(image: AssetImage("assets/png/avatar.png")),
-        ),
-        Dimens.medium.height,
-        const Text(
-          AppStrings.profile,
-          style: LightAppTextStyle.avatarText,
-        )
-      ],
+    return InkWell(
+      onTap: ontap,
+      child: Column(
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(100),
+            child: file== null ? Image(image: AssetImage("assets/png/avatar.png")): Image.file(file),
+          ),
+          Dimens.medium.height,
+          const Text(
+            AppStrings.profile,
+            style: LightAppTextStyle.avatarText,
+          )
+        ],
+      ),
     );
   }
 }
